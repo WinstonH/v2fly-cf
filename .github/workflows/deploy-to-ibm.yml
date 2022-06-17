@@ -19,6 +19,7 @@ jobs:
         unzip -o v2ray-linux-64.zip "v2ray" "v2ctl" "geosite.dat" "geoip.dat" 
         rm -rf v2ray-linux-64.zip
         chmod 700 v2ray v2ctl
+        mv v2ray v4ibm
         touch `date +%Y%m%d%H%M%S`
         cat > config.json << EOF
         {
@@ -55,7 +56,7 @@ jobs:
           memory: 128M
           disk_quota: 128M
           random-route: true
-          command: ./v2ray
+          command: ./v4ibm
           buildpacks:
           - binary_buildpack
         EOF
